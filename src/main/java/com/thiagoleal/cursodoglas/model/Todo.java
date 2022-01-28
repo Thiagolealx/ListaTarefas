@@ -10,17 +10,14 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
-public class LivrariaEntity {
+public class Todo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    private String nome;
-
-    @Column
-    private String editora;
+    private String description;
 
     @Column
     private Boolean done;

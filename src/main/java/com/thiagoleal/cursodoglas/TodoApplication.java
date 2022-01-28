@@ -1,7 +1,8 @@
 package com.thiagoleal.cursodoglas;
 
-import com.thiagoleal.cursodoglas.model.LivrariaEntity;
-import com.thiagoleal.cursodoglas.repository.LivrariaRepository;
+import com.thiagoleal.cursodoglas.Controller.TodoController;
+import com.thiagoleal.cursodoglas.model.Todo;
+import com.thiagoleal.cursodoglas.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,18 +15,17 @@ import java.time.LocalDateTime;
 public class TodoApplication {
 
 	@Autowired
-	private LivrariaRepository livrariaRepository;
+	private TodoRepository todoRepository;
 
 	@Bean
 	public  CommandLineRunner init (){
 		return new CommandLineRunner(){
 			@Override
 			public void run(String...args)throws Exception{
-				LivrariaEntity livrariaEntity = new LivrariaEntity();
-				livrariaEntity.setNome("Spring");
-				livrariaEntity.setEditora("Thiago");
-				livrariaEntity.setCreateDate(LocalDateTime.now());
-				livrariaRepository.save(livrariaEntity);
+				Todo todo = new Todo();
+				todo.setDescription("Spring");
+				todo.setCreateDate(LocalDateTime.now());
+				todoRepository.save(todo);
 
 			}
 		};
