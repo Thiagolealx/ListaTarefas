@@ -17,19 +17,7 @@ public class TodoApplication {
 	@Autowired
 	private TodoRepository todoRepository;
 
-	@Bean
-	public  CommandLineRunner init (){
-		return new CommandLineRunner(){
-			@Override
-			public void run(String...args)throws Exception{
-				Todo todo = new Todo();
-				todo.setDescription("Spring");
-				todo.setCreateDate(LocalDateTime.now());
-				todoRepository.save(todo);
 
-			}
-		};
-	}
 
 	public static void main(String[] args) {
 
